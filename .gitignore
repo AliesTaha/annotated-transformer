@@ -4,3 +4,6 @@
 *.pt
 __pycache__
 wandb
+.secrets
+.env
+colab_ssh_setup.py
