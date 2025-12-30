@@ -56,7 +56,7 @@ square_gen = squares_with_yield(5)
 print(f"Type: {type(square_gen)}")
 print(f"Values: ", end="")
 for sq in square_gen:
-    print(sq, end=" ")
+    print(sq)
 print()
 
 print("\n" + "=" * 60)
