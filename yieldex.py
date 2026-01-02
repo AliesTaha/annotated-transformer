@@ -1,39 +1,3 @@
-#!/usr/bin/env python3
-"""
-Examples demonstrating how 'yield' works in Python
-Run this file to see generators in action!
-"""
-
-print("=" * 60)
-print("EXAMPLE 1: Basic Generator - Count Up")
-print("=" * 60)
-
-def count_up_to(n):
-    """Generator that counts from 1 to n"""
-    print(f"  [Generator starting...]")
-    i = 1
-    while i <= n:
-        print(f"  [About to yield {i}]")
-        yield i  # Pause here, return i
-        print(f"  [Resumed after yielding {i}]")
-        i += 1
-    print(f"  [Generator done!]")
-
-print("\nUsing next():")
-counter = count_up_to(3)
-print(f"First call: {next(counter)}")
-print(f"Second call: {next(counter)}")
-print(f"Third call: {next(counter)}")
-print()
-
-print("\nUsing a for loop:")
-for num in count_up_to(3):
-    print(f"Got: {num}")
-
-print("\n" + "=" * 60)
-print("EXAMPLE 2: Return vs Yield - Memory Comparison")
-print("=" * 60)
-
 def squares_with_return(n):
     """Returns all squares at once"""
     result = []
@@ -55,9 +19,7 @@ print("\nUsing yield (one at a time):")
 square_gen = squares_with_yield(5)
 print(f"Type: {type(square_gen)}")
 print(f"Values: ", end="")
-for sq in square_gen:
-    print(sq)
-print()
+print([sq for sq in square_gen])
 
 print("\n" + "=" * 60)
 print("EXAMPLE 3: Infinite Generator")
